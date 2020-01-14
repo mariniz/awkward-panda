@@ -71,117 +71,8 @@
 			color: #cccccc;
 			font-weight: bold;
 		} 
-		/* Hero Image */
-
-		body {
-			margin: 0;
-			padding: 0;
-		}
-		.hero {
-			position: relative;
-			width: 100vw;
-			height: 70vh;
-			display: flex;
-			justify-content: center;
-			align-items: center;
-		}
-		.hero::before {
-			content: ""; 
-			position: absolute;
-			top: 0;
-			left: 0;
-			width: 100%;
-			height: 100%;
-			background: url(images/mywines.jpg);
-			background-repeat: no-repeat;
-			background-size: cover;
-			background-position: center center;
-			filter: brightness(50%);
-		}
-
-		.hero-content {
-			position: relative;
-			font-family: 'IM Fell Great Primer SC', serif;
-			color: white;
-			text-align: center;
-			margin: 0.625rem;
-		}
-		.hero-title {
-			font-size: 3rem; 
-			font-weight: 600;
-			margin-bottom: 0;
-		}
-		.hero-subtitle {
-			font-size: 2rem;
-			font-weight: 200;
-			margin-top: 1rem;
-		}
-		.hero-button {
-			background-color: #cb0b1e;
-			color: white;
-			border: 1px solid #f9efea;
-			margin-top: 5rem;
-			padding: 0.9375rem 1.875rem;
-			font-family: 'IM Fell Great Primer SC', serif;
-			font-size: 1.125rem;
-			font-weight: 200;
-			cursor: pointer;
-		}
-		.hero-button:hover {
-			background-color: #cb0b1e;
-			border: 1px solid #fdfaf9;
-		}
 
 
-		/* Newsletter */
-		#newsletter {
-			padding: 3px;
-			color: #ffffff;
-			background: #B31329;
-		}
-
-		#newsletter h1{
-			float: left;
-		}
-
-		#newsletter form {
-			float: right;
-			margin-top: 10px;
-		}
-
-		#newsletter input[type="email"]{
-			padding: 4px;
-			height: 25px;
-			width: 250px;
-		}
-
-		.button_1{
-			height: 38px;
-			background: #cccccc;
-			border: 0;
-			padding-left: 20px;
-			padding-right: 20px;
-			color: #353637;
-		}
-
-		#boxes{
-			margin-top: 20px;
-		}
-
-		#boxes .box{
-			float: left;
-			text-align: center;
-			width: 30%;
-			padding: 10px;
-		}
-
-		footer{
-			padding: 10px;
-			margin-top: 10px;
-			color: #ffffff;
-			background-color: #800020;
-			text-align: center; 
-		}
 
 		/*Sidebar */
 		aside #sidebar {
@@ -399,58 +290,9 @@
 					}
 				</script>
 			</nav>
-			<div id="branding">
-				<h1><i class="fa fa-rocket"></i> <span class="highlight">Winetalk</span> A Glass of Shiraz </h1> 
-			</div>
-			<div class="search-container">
-				<form action="/action_page.php">
-					<input type="text" placeholder="Search..." name="search">
-					<button type="submit"><i class="fa fa-search"></i></button>
-				</form>
-			</div>
 		</div>
 	</header>
-	<section class="hero">
-		<div class="hero-content">
-			<h1 class="hero-title">
-			Become a Wine Expert </h1>
-
-			<h2 class="hero-subtitle">
-			We offer courses for wine lovers at all levels! </h2>
-
-			<button type="button" class="hero-button" onclick="location.href='classes.html'">
-			Search for classes &raquo; </button>
-
-		</div>
-	</section>
-
-	<section id="newsletter">
-		<div class="container">
-			<h1> Get my monthly newsletter </h1>
-			<form action="">
-				<input type="email" placeholder="Enter your email address">
-				<button type="submit" class="button_1">Subscribe</button>
-			</section>
-
-			<section id="boxes"s >
-				<div class="container">
-					<a class="box">
-						<i class="fa fa-signal  fa-5x"></i>
-						<img src="/images/3.jpg"
-						<h3> Recent Wines </h3>
-						<p> As any other wine-enthusiast, I take great pleasure in trying new brands of wine. This section lists each of the wines I try, and what I think about them. </p></a>
-					</div>
-					<a class="box">
-						<i class="fa fa-photo  fa-5x"></i>
-						<h3> Categories</h3>
-						<p> What types of wines are there? What are their characteristics? </p></a>
-						<div class="box">
-							<i class="fa fa-cube  fa-5x"></i>
-							<h3> Wine Stories </h3>
-							<p> Fun or deep stories that involve wine. </p>
-						</div>
-					</div>
-				</section>
+	
 
 				<footer>
 					<p>MARIA's Web Site, Copyright &copy; 2020</p>
