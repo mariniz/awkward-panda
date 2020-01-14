@@ -1,56 +1,387 @@
 <!doctype html>
 <html>
 <head>
-<meta charset=utf-8">
-<title> Jasmine Tea & Roses  </title>
+	<meta charset="utf-8">
+	<title> Jasmine Tea & Roses </title>
+	<style> 
+		body {
+			font: 15px/1.5 Arial, Helvetica, sans-serif;
+			padding: 0;
+			margin: 0;
+			background-color: #fcf5db
+		}
+
+		.container{
+			width: 80%;
+			margin: auto;
+			overflow:hidden;
+			text-align: right;
+		}
+
+		.dark{: 
+			padding: 15px;
+			background: #35424a;
+			color: #ffffff;
+			margin-top: 10px;
+			margin-bottom: 10px;
+		}
+		ul{
+			margin: 0;
+			padding: 0;
+		}
+
+		/* Header */ 
+		header{
+			background: #B31329;
+			color: #ffffff;
+			padding-top: 30px;
+			padding-bottom: 20px;
+			min-height: 70px;
+			border-bottom: #ffd0c2 3px solid;
+		}
+
+		header a{
+			color: #ffffff;
+			text-decoration: none;
+			text-transform: uppercase;
+			font-size: 1px;
+		}
+
+		header li{
+			padding: 0 20px 0 20px;
+		}
+
+		header #branding h1{
+			margin: 0;
+		}
+
+		header nav{
+			float: left;
+			margin-top: 20px;
+
+		}
+
+		header .highlight, header .current a {
+			color: #ffd0c2;
+			font-weight: bold;
+		}
+
+		header a: hover{
+			color: #cccccc;
+			font-weight: bold;
+		} 
+
+		/* Showcase */
+
+		#showcase {
+			min-height: 400px;
+			background:url('images/mywines.jpg'); no-repeat center;
+			background-size: cover;
+			text-align: center;
+			color: #ffffff;
+			position: relative;
+		}
+
+		#showcase .container {
+			text-align: left;
+			background:  rgba(0, 0, 0, 0.5);
+			position: absolute;
+			bottom: 0;
+			width: 100%;
+		}
+
+		#showcase h1{
+			margin-top: 70px;
+			font-size: 55px;
+			margin-bottom: 10px;
+		}
+
+		#showcase p{
+			font-size: 20px;
+		}
+
+		/* Newsletter */
+		#newsletter {
+			padding: 3px;
+			color: #ffffff;
+			background: #B31329;
+		}
+
+		#newsletter h1{
+			float: left;
+		}
+
+		#newsletter form {
+			float: right;
+			margin-top: 10px;
+		}
+
+		#newsletter input[type="email"]{
+			padding: 4px;
+			height: 25px;
+			width: 250px;
+		}
+
+		.button_1{
+			height: 38px;
+			background: #cccccc;
+			border: 0;
+			padding-left: 20px;
+			padding-right: 20px;
+			color: #353637;
+		}
+
+		#boxes{
+			margin-top: 20px;
+		}
+
+		#boxes .box{
+			float: left;
+			text-align: center;
+			width: 30%;
+			padding: 10px;
+		}
+
+		footer{
+			padding: 10px;
+			margin-top: 10px;
+			color: #ffffff;
+			background-color: #800020;
+			text-align: center; 
+		}
+
+		/*Sidebar */
+		aside #sidebar {
+			float: right;
+			width: 30%;
+			padding: 5px;
+		}
+
+		article #main-col{
+			float: left;
+			width: 65%;
+		}
+		
+		@media(max-width: 768px) {
+			header #branding, 
+			header nav, 
+			header nav li, 
+			#newsletter h1, 
+			#newsletter form, 
+			#boxes .box{
+				article#main-col,
+				aside#sidebar {
+					float: none;
+					text-align: center;
+					width: 100%;
+				}
+
+				header {
+					padding-bottom: 20px;
+				}
+
+
+				#showcase h1 {
+					margin-top: 40px;
+				}
+
+				#newsletter button {
+					display: block;
+					width: 100%;
+				}
+
+				#newsletter form input[type="email"]{
+					width: 100%;
+					margin-bottom: 5px;
+				}
+			}
+		}
+
+		/*Nav*/
+		body {
+			font-family: 'Lato', sans-serif;
+		}
+
+		.overlay {
+			height: 100%;
+			width: 0;
+			position: fixed;
+			z-index: 1;
+			top: 0;
+			left: 0;
+			background-color: rgb(0,0,0);
+			background-color: rgba(0,0,0, 0.9);
+			overflow-x: hidden;
+			transition: 0.5s;
+		}
+
+		.overlay-content {
+			position: relative;
+			top: 25%;
+			width: 100%;
+			text-align: center;
+			margin-top: 30px;
+		}
+
+		.overlay a {
+			padding: 8px;
+			text-decoration: none;
+			font-size: 36px;
+			color: #818181;
+			display: block;
+			transition: 0.3s;
+		}
+
+		.overlay a:hover, .overlay a:focus {
+			color: #f1f1f1;
+		}
+
+		.overlay .closebtn {
+			text-align: right;
+			font-size: 40px;
+		}
+
+		@media screen and (max-height: 450px) {
+			.overlay a {font-size: 15px}
+			.overlay .closebtn {
+				font-size: 25px;
+				top: 15px;
+				right: 35px;
+			}
+
+			#myNav {
+				position: absolute;
+				display: block;
+				background: black;
+				height: 450px;
+				width: 200px;
+			}
+
+			#myNav a {
+				font-size: 2em;
+			}
+		}
+
+		/*Search*/
+		* {box-sizing: border-box;}
+
+		body {
+			margin: 0;
+			font-family: Arial, Helvetica, sans-serif;
+		}
+
+		.topnav {
+			overflow: hidden;
+			background-color: #e9e9e9;
+		}
+
+		.topnav a {
+			float: right;
+			display: block;
+			color: black;
+			text-align: center;
+			padding: 14px 16px;
+			text-decoration: none;
+			font-size: 17px;
+		}
+
+		.topnav a:hover {
+			background-color: #ddd;
+			color: black;
+		}
+
+		.topnav a.active {
+			background-color: #2196F3;
+			color: white;
+		}
+
+		.topnav .search-container {
+			float: right;
+			position: absolute;
+		}
+
+		.topnav input[type=text] {
+			padding: 6px;
+			margin-top: 8px;
+			font-size: 17px;
+			border: none;
+		}
+
+		.topnav .search-container button {
+			float: right;
+			padding: 6px 10px;
+			margin-top: 8px;
+			margin-right: 16px;
+			background: #ddd;
+			font-size: 17px;
+			border: none;
+			cursor: pointer;
+		}
+
+		.topnav .search-container button:hover {
+			background: #ccc;
+		}
+
+		@media screen and (max-width: 600px) {
+			.topnav .search-container {
+				float: right;
+			}
+			.topnav a, .topnav input[type=text], .topnav .search-container button {
+				float: right;
+				display: block;
+				text-align: left;
+				width: 100%;
+				margin: 0;
+				padding: 14px;
+			}
+			.topnav input[type=text] {
+				border: 1px solid #ccc;  
+			}
+		}
+	</style>
 </head>
 <body>
 	<header>
 		<div class="container">
-			<div id="branding">
-				<h1><i class="fa fa-rocket"></i> <span class="highlight">Winetalk</span> Shiraz & life</h1> 
-			</div>
 			<nav>
-				<ul>
-					<li><a href="index.html">Home</a></li>
-					<li class="current"><a href="about.html">About</a></li>
-					<li><a href="https://mariniz.github.io/awkward-panda/services.html">Contact</a></li>
-				</ul>
-				<button class="dropbtn">Home</button>
-				<div class="drop-content">
-					<a href="/index.html">Home</a>
-    				<a href="/about.html">About</a>
-    				<a href="/services.html">Contact</a>
- 				 </div>
+				<div id="myNav" class="overlay">
+					<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+					<ul>
+						<li><a href="../index.html">Home</a></li>
+						<li><a href="#">Classes</a></li>
+						<li><a href="./About">About</a></li>
+						<li><a href="/Contact.html">Contact</a></li>
+					</ul>
+				</div>
 
+				<span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; </span>
+
+				<script>
+					function openNav() {
+						document.getElementById("myNav").style.width = "400px";
+					}
+
+					function closeNav() {
+						document.getElementById("myNav").style.width = "0%";
+					}
+				</script>
 			</nav>
+			<div id="branding">
+				<h1><i class="fa fa-rocket"></i> <span class="highlight">Winetalk</span> A Glass of Shiraz </h1> 
+			</div>
+			<div class="search-container">
+				<form action="/action_page.php">
+					<input type="text" placeholder="Search..." name="search">
+					<button type="submit"><i class="fa fa-search"></i></button>
+				</form>
+			</div>
 		</div>
 	</header>
-
-	<section class="main">
-		<div class="container">
-			<article id="main-col">
-				<h1 class="page-title">
-					About us
-				</h1>
-				<p> ANy text </p>
-				<p class="dark">
-				Any text again
-				dskdsjfdfsjbfsnskfnsm
-				 </p>
-			</article>
-			<aside id="sidebar">
-				<div class="dark">
-					<h3><i class="fa fa-users"></i> The Team </h3>
-					<p> Any.text. </p>
-				</div>
-			</aside>
-		</div>
-	</section>
+	
 	<footer>
 		<p>MARIA's Web Site, Copyright &copy; 2020</p>
 	</footer>
 
 
-</body>
-</html>
+			</body>
+			</html>
